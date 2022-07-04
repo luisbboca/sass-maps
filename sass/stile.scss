@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+//variables
+$gray-color:rgb(0, 0, 0);
+$main-font:'Inter', sans-serif;
+//mapas
+$colores:(
+    primario:#8ed6b2,
+    secundario:black,
+    terciario:rgb(255, 255, 255)
+);
+$pri:map-get($colores,primario);
+$sec:map-get($colores,secundario);
+$ter:map-get($colores,terciario);
+
+
+//mixin
+@mixin colordefondo{
+    background:rgb(0, 0, 0);
+}
+//extend
+%placeholder1{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+
+}
+
+//main
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body,
+html{
+    font-family: $main-font
+}
+h2{
+    font-size: 2rem;
+    text-transform: uppercase ;
+}
+h3{
+    font-size: 1.5rem;
+}
+h1,
+h3{
+   font-weight: 600; 
+}
+h1,h2,h3,p{
+    margin-bottom: 20px;
+}
+p{
+    font-size: 1rem;
+}
+a,
+a:visited{
+    text-decoration: none;
+    color: $ter;
+}
+//clases principales
+.container{
+    margin: auto;
+    max-width: 1300px;
+    overflow: auto;
+    padding: 0 10px;
+
+}
+.btn{
+    display: inline-block;
+    font-size: 18px;
+    color: $ter;
+    @include colordefondo;
+    padding: 13px 30px;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover{
+    background: lighten($sec, 10%);
+}
+.large{
+    font-size: 1.5rem;
+}
+.samall{
+    font-size: .6rem;
+}
+.txt-primary{
+    color: $pri;
+}
+.txt-gray{
+    color: $gray-color;
+}
+.p-80{
+    padding: 80px;
+}
+.bk{
+    background: url(../img/contactes.jpg) ;
+    @extend %placeholder1;
+}
+
+//gym
+#gym{
+    .gym-wrap{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .gym-wrap-bk{
+            background: url(../img/cbum4.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            height: 100%;
+        }
+        .gym-wrap-form{
+            padding: 50px;
+            background: $ter;
+            border-top-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            h2,
+            h3,
+            p{
+                text-align: center;
+            }
+            h2{
+                padding-bottom: 20px;
+            }
+            form{
+                p{
+                    text-align: right;
+                }
+                button{
+                    width: 100%;
+                    border-radius: 5px;
+                }
+            }
+           
+        }
+    }
+}
+.form{
+    padding: 60px;
+    label{
+        display: block;
+        margin-bottom: 5px;
+    }
+    input{
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+}
+
+.fotm-in-gray{
+    input{
+        border: 0;
+        border-bottom: 2px solid grey;
+    }
+}
